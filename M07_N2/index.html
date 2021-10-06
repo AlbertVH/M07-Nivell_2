@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer07-Nivell-2</title>
+</head>
+<body>
+    <p></p>
+    <h2>CALCULADORA AVANZADA</h2>
+    <p></p>
+    <script>
+        // Definir funció
+        var resultado=0;
+        function calculadora(operador, valor1, valor2) {
+            if (operador=="+"){
+                resultado=valor1+valor2;
+            } 
+            else if(operador=="-") {
+                resultado=valor1-valor2;
+            }
+            else if(operador=="*") {
+                resultado=valor1*valor2;
+            }
+            else if(operador=="/") {
+                    if (valor2!=0){
+                        resultado=valor1/valor2;
+                    } else{
+                        document.write("El denominador en una división no puede ser cero. Repite la división, por favor." + "<p></p>");
+                    }
+            }
+            else{
+                document.write("El operador introducido no es correcto. Por favor, repite." + "<p></p>");
+            }
+        }
+
+        // Demanar dades
+        var operador, valor1, valor2;
+        document.write("Bienvenid@ a la calculadora" + "<p></p>");
+        operador=prompt("Introduce operador (+, -, *, /)");
+        valor1=parseInt(prompt("Introduce el primer número"));
+        valor2=parseInt(prompt("Introduce el segundo número"));
+        
+        // Operar i mostrar resultat
+        calculadora(operador, valor1, valor2);
+        document.write("El resultado es: " + resultado);
+        
+    </script>
+</body>
+</html>
